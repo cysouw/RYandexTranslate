@@ -83,7 +83,7 @@ translate=function(api_key,text="",lang="")
   {
     url=paste(url,"&lang=",lang,sep="")
   }
-  
+  url = gsub(pattern = " ", replacement = "%20", x = url)
   d=getURL(url,ssl.verifyhost = 0L, ssl.verifypeer = 0L)
   d=fromJSON(d)
   d$code=NULL
